@@ -1,7 +1,7 @@
 import tensorflow as tf
-
+import streamlit as st 
 # Asegúrate de que la ruta esté correcta y sea una cadena de caracteres.
-saved_model_path = "/saved_model_BERT_multilingual.pb"
+saved_model_path = "saved_model_BERT_multilingual.pb"
 
 # Ahora puedes intentar cargar el modelo
 try:
@@ -14,9 +14,6 @@ signatures = list(loaded_model.signatures.keys())
 
 # Assuming 'serving_default' is your signature key of interest
 inference = loaded_model.signatures['serving_default']
-
-# Now to integrate it with Streamlit, here's a starter code:
-import streamlit as st
 
 st.title("Noticias Veracidad Checker")
 
