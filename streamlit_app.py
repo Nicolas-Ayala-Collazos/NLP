@@ -1,7 +1,7 @@
 import tensorflow as tf
 
 # Asegúrate de que la ruta esté correcta y sea una cadena de caracteres.
-saved_model_path = "/home/adminuser/models/my_saved_model"
+saved_model_path = "/saved_model_BERT_multilingual.pb"
 
 # Ahora puedes intentar cargar el modelo
 try:
