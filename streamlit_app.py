@@ -1,7 +1,7 @@
 import tensorflow as tf
 import streamlit as st 
 # Asegúrate de que la ruta esté correcta y sea una cadena de caracteres.
-saved_model_path = "saved_model_BERT_multilingual"
+saved_model_path = '/saved_model_BERT_multilingual'
 
 # Ahora puedes intentar cargar el modelo
 try:
