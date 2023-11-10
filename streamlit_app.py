@@ -1,7 +1,7 @@
 import tensorflow as tf
 
 # Path to the saved_model.pb file
-saved_model_path = 'path_to_your_saved_model_directory'
+saved_model_path = 'saved_model_BERT_multilingual.pb'
 
 # Load the SavedModel
 loaded_model = tf.saved_model.load(saved_model_path)
