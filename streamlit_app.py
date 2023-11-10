@@ -19,4 +19,4 @@ except Exception as e:
     st.error(f"Error al cargar el modelo: {e}")
     # Si la carga del modelo falla, 'loaded_model' no debe ser usado más allá de este punto
 
-        st.write("Por favor, ingresa una afirmación para verificar.")
+    st.write("Por favor, ingresa una afirmación para verificar.")
