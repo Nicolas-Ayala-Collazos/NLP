@@ -6,7 +6,7 @@ import tensorflow as tf
 st.title("Aplicación de Clasificación de Noticias")
 
 # Define la ruta al directorio que contiene tu modelo
-saved_model_path = '/saved_model_BERT_multilingual'
+saved_model_path = '/saved_model_BERT_multilingual.pb'
 
 # Intenta cargar el modelo y define 'loaded_model' solo si la carga tiene éxito
 try:
