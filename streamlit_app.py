@@ -4,7 +4,7 @@ import tensorflow as tf
 saved_model_path = '/'
 
 # Load the SavedModel
-loaded_model = tf.saved_model.load(saved_model_path)
+loaded_model = tf.saved_model.load(saved_model_BERT_multilingual.pb)
 
 # List out the available signatures for inference
 signatures = list(loaded_model.signatures.keys())
