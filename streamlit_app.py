@@ -5,7 +5,7 @@ import numpy as np
 from transformers import AutoTokenizer, TFAutoModelForSequenceClassification
 
 # Cargar el modelo y el tokenizer
-model = TFAutoModelForSequenceClassification.from_pretrained('/path_to_saved_model')
+model = TFAutoModelForSequenceClassification.from_pretrained('/saved_model_BERT_multilingual.pb')
 tokenizer = AutoTokenizer.from_pretrained('bert-base-multilingual-cased')
 
 # Función para predecir la veracidad de la noticia
