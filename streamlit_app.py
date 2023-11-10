@@ -1,38 +1,22 @@
+
+
+import streamlit as st
 import tensorflow as tf
-import streamlit as st 
-# Asegúrate de que la ruta esté correcta y sea una cadena de caracteres.
+
+st.title("Aplicación de Clasificación de Noticias")
+
+# Define la ruta al directorio que contiene tu modelo
 saved_model_path = '/saved_model_BERT_multilingual'
 
-# Ahora puedes intentar cargar el modelo
+# Intenta cargar el modelo y define 'loaded_model' solo si la carga tiene éxito
 try:
     loaded_model = tf.saved_model.load(saved_model_path)
     st.write("Modelo cargado con éxito.")
+    # Asumiendo que quieres listar las firmas después de cargar el modelo
+    signatures = list(loaded_model.signatures.keys())
+    st.write("Firmas disponibles:", signatures)
 except Exception as e:
-    st.write("Error al cargar el modelo:", e)
-# List out the available signatures for inference
-signatures = list(loaded_model.signatures.keys())
+    st.error(f"Error al cargar el modelo: {e}")
+    # Si la carga del modelo falla, 'loaded_model' no debe ser usado más allá de este punto
 
-# Assuming 'serving_default' is your signature key of interest
-inference = loaded_model.signatures['serving_default']
-
-st.title("Noticias Veracidad Checker")
-
-# Text input for the news statement
-statement = st.text_area("Ingresa la afirmación para verificar su veracidad:")
-
-# Button to trigger prediction
-if st.button("Verificar"):
-    if statement:
-        # Preprocessing and tokenization steps would go here
-        # For the sake of this example, let's assume the model takes tokenized text
-        tokenized_text = tokenize(statement)  # replace 'tokenize' with your actual function
-
-        # Run the model's inference
-        result = inference(tf.constant([tokenized_text]))  # adjust according to the model's expected input
-
-        # Postprocess the results and display
-        # Here you would convert the model output to a human-readable form
-        prediction = result['output_0'].numpy()[0]  # adjust 'output_0' to your actual output key
-        st.write("La afirmación es:", "Verdadera" if prediction > 0.5 else "Falsa")
-    else:
         st.write("Por favor, ingresa una afirmación para verificar.")
