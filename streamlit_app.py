@@ -1,11 +1,14 @@
 import tensorflow as tf
 
-# Path to the saved_model.pb file
-saved_model_path = '/'
+# Asegúrate de que la ruta esté correcta y sea una cadena de caracteres.
+saved_model_path = "/home/adminuser/models/my_saved_model"
 
-# Load the SavedModel
-loaded_model = tf.saved_model.load(saved_model_BERT_multilingual.pb)
-
+# Ahora puedes intentar cargar el modelo
+try:
+    loaded_model = tf.saved_model.load(saved_model_path)
+    st.write("Modelo cargado con éxito.")
+except Exception as e:
+    st.write("Error al cargar el modelo:", e)
 # List out the available signatures for inference
 signatures = list(loaded_model.signatures.keys())
 
