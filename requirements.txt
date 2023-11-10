@@ -4,4 +4,5 @@ streamlit == 0.87
 pandas == 1.2.4
 keybert
 flair
+tensorflow
 click<8
