@@ -1,7 +1,6 @@
 
 import streamlit as st
 import numpy as np
-#import tensorflow as tf
 from transformers import AutoTokenizer, TFAutoModelForSequenceClassification
 
 # Cargar el modelo y el tokenizer
